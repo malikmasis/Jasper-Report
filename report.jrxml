@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" isIgnorePagination="true" uuid="711600b9-6f0e-4a7b-b461-11265ed6537d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FF0000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="74b352a0-8302-4390-b576-3a4f089a5844">
+		<parameter name="accountNameCaption" class="java.lang.String"/>
+		<parameter name="accountCodeCaption" class="java.lang.String"/>
+		<parameter name="lineExpCaption" class="java.lang.String"/>
+		<parameter name="debitCaption" class="java.lang.String"/>
+		<parameter name="creditCaption" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="accountname" class="java.lang.String"/>
+		<field name="accountcode" class="java.lang.String"/>
+		<field name="ledgertransBorç" class="java.lang.String"/>
+		<field name="ledgertransAçıklama" class="java.lang.String"/>
+		<field name="ledgertransAlacak" class="java.lang.String"/>
+		<field name="dynamicfield1" class="java.lang.String"/>
+		<field name="companyname" class="java.lang.String"/>
+		<variable name="kartal" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="tableHeadA" class="java.lang.String"/>
+	<parameter name="accountNameCaption" class="java.lang.String"/>
+	<parameter name="accountCodeCaption" class="java.lang.String"/>
+	<parameter name="lineExpCaption" class="java.lang.String"/>
+	<parameter name="debitCaption" class="java.lang.String"/>
+	<parameter name="creditCaption" class="java.lang.String"/>
+	<parameter name="bankcode" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="columnName" class="java.lang.String"/>
+	<parameter name="showHide" class="java.lang.Boolean"/>
+	<parameter name="companycode" class="java.lang.String"/>
+	<parameter name="companyname" class="java.lang.String"/>
+	<parameter name="showAccountName" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showAccountCode" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showLineExp" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showDebit" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showCredit" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="mytable" class="java.lang.Object[]"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<textField isBlankWhenNull="true">
+				<reportElement x="133" y="0" width="100" height="20" uuid="bee92ebd-00c8-430b-8ba3-2fa32a6bf1d8"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companycode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="233" y="0" width="100" height="20" uuid="aa54f11a-4085-477c-bd5d-5a1d603cfe93"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["test2"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="0" width="90" height="20" uuid="0c77aebf-21cb-4f4f-b597-53539105cd4b"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Şirket Bilgileri:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="133" y="20" width="100" height="20" uuid="0208463a-0789-45dc-bebf-d74a328a8a3d"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bankcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="43" y="20" width="90" height="20" uuid="f77fb6a7-eb89-4b8e-9783-dbe9728c2169"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Bank Bilgileri:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="233" y="20" width="100" height="20" uuid="29d0eaee-0bea-4125-8cd6-670738062b48"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{columnName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="333" y="0" width="100" height="20" uuid="0abf67d7-a810-4091-980c-ccb307417b16"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="50"/>
+		<band height="259">
+			<elementGroup/>
+			<componentElement>
+				<reportElement x="28" y="22" width="432" height="174" uuid="73b3a392-b9d2-4aa5-bf95-beecbbcb74ef"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Table Dataset 1" uuid="2f9361fa-4478-4b58-8063-bbaae875abd9">
+						<datasetParameter name="accountNameCaption">
+							<datasetParameterExpression><![CDATA[$P{accountNameCaption}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="accountCodeCaption">
+							<datasetParameterExpression><![CDATA[$P{accountCodeCaption}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="lineExpCaption">
+							<datasetParameterExpression><![CDATA[$P{lineExpCaption}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="debitCaption">
+							<datasetParameterExpression><![CDATA[$P{debitCaption}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="creditCaption">
+							<datasetParameterExpression><![CDATA[$P{creditCaption}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRMapArrayDataSource($P{mytable})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="103" uuid="7086a9aa-81e2-4c69-b336-e75e36a8d596">
+						<printWhenExpression><![CDATA[new Boolean($P{showAccountName})]]></printWhenExpression>
+						<jr:columnHeader height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="100" height="30" uuid="59cdf932-bdcc-4c3f-96e6-765206b41b2b"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{accountNameCaption}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="100" height="30" uuid="7c5da9c7-c5ff-4278-acb7-cc681ea0ca63"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{accountname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="7086a9aa-81e2-4c69-b336-e75e36a8d596">
+						<printWhenExpression><![CDATA[new Boolean($P{showAccountCode})]]></printWhenExpression>
+						<jr:columnHeader height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="30" uuid="59cdf932-bdcc-4c3f-96e6-765206b41b2b"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{accountCodeCaption}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="30" uuid="4f476839-e5a1-40d3-bf1d-bad9f3556f40"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{accountcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="7086a9aa-81e2-4c69-b336-e75e36a8d596">
+						<printWhenExpression><![CDATA[new Boolean($P{showLineExp})]]></printWhenExpression>
+						<jr:columnHeader height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="77" height="30" uuid="59cdf932-bdcc-4c3f-96e6-765206b41b2b"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{lineExpCaption}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="2" y="0" width="85" height="30" uuid="4f476839-e5a1-40d3-bf1d-bad9f3556f40"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ledgertransBorç}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="7086a9aa-81e2-4c69-b336-e75e36a8d596">
+						<printWhenExpression><![CDATA[new Boolean($P{showDebit})]]></printWhenExpression>
+						<jr:columnHeader height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="30" uuid="59cdf932-bdcc-4c3f-96e6-765206b41b2b"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{debitCaption}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="100" height="30" uuid="f981f1e8-736b-4961-8f96-d45052cc456c"/>
+								<textFieldExpression><![CDATA[$F{ledgertransAçıklama}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7086a9aa-81e2-4c69-b336-e75e36a8d596">
+						<printWhenExpression><![CDATA[new Boolean($P{showCredit})]]></printWhenExpression>
+						<jr:columnHeader height="30" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="30" uuid="59cdf932-bdcc-4c3f-96e6-765206b41b2b"/>
+								<textElement verticalAlignment="Middle">
+									<font pdfEncoding="Cp1254"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{creditCaption}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="3240ff36-7a76-4fbe-b1f7-d359697fdad1"/>
+								<textFieldExpression><![CDATA[$F{ledgertransAlacak}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="8b7ee936-7102-4943-b723-b00182ea7897"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="4c482c88-3b4d-4043-b08b-28ff84c5e859"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="28" y="0" width="100" height="20" uuid="7da198cb-47cb-4585-893c-043f02f579aa"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="153" y="0" width="90" height="20" uuid="5671a027-16a8-400c-b841-18ff2bcf13a4"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Oluşturan:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="233" y="0" width="155" height="20" uuid="957d6925-adf4-4190-948d-ec7df70a1871"/>
+				<textElement>
+					<font pdfEncoding="Cp1254" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
